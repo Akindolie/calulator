@@ -26,6 +26,58 @@ class CalculatorKeypad extends StatelessWidget {
     ],
     [
       CalculatorButton(
+        text: "sin",
+        value: "sin",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+      CalculatorButton(
+        text: "cos",
+        value: "cos",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+      CalculatorButton(
+        text: "tan",
+        value: "tan",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+      CalculatorButton(
+        text: "log",
+        value: "log",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+    ],
+    [
+      CalculatorButton(
+        text: "ln",
+        value: "ln",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+      CalculatorButton(
+        text: "x²",
+        value: "x²",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+      CalculatorButton(
+        text: "x³",
+        value: "x³",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+      CalculatorButton(
+        text: "1/x",
+        value: "1/x",
+        type: ButtonType.function,
+        color: Colors.green,
+      ),
+    ],
+    [
+      CalculatorButton(
         text: "C",
         value: "C",
         type: ButtonType.utility,

@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+import 'package:calulator/logic/scientific_calculator_logic.dart';
+
 import '../models/calculation_history.dart';
 import '../models/calculator_state.dart';
 
@@ -9,6 +11,21 @@ class CalculatorLogic {
 
   // Main calculation logic
   static CalculatorState processInput(CalculatorState state, String input) {
+    print("INPUT => $input");
+    const Set<String> scientificOps = {
+      "sin",
+      "cos",
+      "tan",
+      "log",
+      "ln",
+      "x²",
+      "x³",
+      "1/x",
+    };
+    if (scientificOps.contains(input)) {
+      print("Na me");
+      return ScientificCalculator.handleScientificFunction(state, input);
+    }
     switch (input) {
       case "0":
       case "1":
@@ -255,6 +272,7 @@ class CalculatorLogic {
   }
 
   static String formatDisplay(double value) {
+    print("result3 => $value");
     if (value == value.toInt()) {
       return value.toInt().toString();
     }
