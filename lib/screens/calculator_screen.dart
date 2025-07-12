@@ -19,6 +19,8 @@ class CalculatorAppState extends State<CalculatorApp> {
   CalculatorTheme _theme = CalculatorTheme.dark;
   CalculatorState _state = const CalculatorState();
   bool _showHistory = false;
+  bool _showConverter = false;
+  //TODO: work on the conversion UI
   late FocusNode _focusNode;
 
   @override
@@ -124,7 +126,7 @@ class CalculatorAppState extends State<CalculatorApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: _theme.backgroundColor,
       body: Focus(
         focusNode: _focusNode,
         onKeyEvent: _handleKeyEvent,
@@ -132,7 +134,7 @@ class CalculatorAppState extends State<CalculatorApp> {
         child: SafeArea(
           child: Column(
             children: [
-              CalculatorDisplay(state: _state),
+              CalculatorDisplay(state: _state, theme: _theme),
               _buildHistoryToggle(),
               Expanded(
                 child: _showHistory
@@ -144,6 +146,7 @@ class CalculatorAppState extends State<CalculatorApp> {
                     : CalculatorKeypad(
                         state: _state,
                         onButtonPressed: _onButtonPressed,
+                        theme: _theme,
                       ),
               ),
             ],
@@ -161,18 +164,26 @@ class CalculatorAppState extends State<CalculatorApp> {
         children: [
           Text(
             _showHistory ? "Calculator" : "History (${_state.history.length})",
-            style: const TextStyle(color: Colors.grey, fontSize: 16),
+            style: TextStyle(color: _theme.currentOpTextColor, fontSize: 16),
           ),
-          IconButton(
-            icon: Icon(
-              _showHistory ? Icons.calculate : Icons.history,
-              color: Colors.grey,
-            ),
-            onPressed: () {
-              setState(() {
-                _showHistory = !_showHistory;
-              });
-            },
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(
+                  _showHistory ? Icons.calculate : Icons.history,
+                  color: _theme.currentOpTextColor,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _showHistory = !_showHistory;
+                  });
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.brightness_6, color: _theme.textColor),
+                onPressed: _toggleTheme,
+              ),
+            ],
           ),
         ],
       ),

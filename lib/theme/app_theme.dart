@@ -6,6 +6,8 @@ class CalculatorTheme {
   final Color numberButtonColor;
   final Color operationButtonColor;
   final Color textColor;
+  final Color scientificOpButtonColor;
+  final Color currentOpTextColor;
 
   const CalculatorTheme({
     required this.backgroundColor,
@@ -13,6 +15,8 @@ class CalculatorTheme {
     required this.numberButtonColor,
     required this.operationButtonColor,
     required this.textColor,
+    required this.scientificOpButtonColor,
+    required this.currentOpTextColor,
   });
 
   static const CalculatorTheme dark = CalculatorTheme(
@@ -20,7 +24,9 @@ class CalculatorTheme {
     displayColor: Colors.white,
     numberButtonColor: Color(0xFF333333),
     operationButtonColor: Colors.orange,
+    scientificOpButtonColor: Colors.green,
     textColor: Colors.white,
+    currentOpTextColor: Colors.grey,
   );
 
   static const CalculatorTheme light = CalculatorTheme(
@@ -29,5 +35,7 @@ class CalculatorTheme {
     numberButtonColor: Color(0xFFF0F0F0),
     operationButtonColor: Colors.blue,
     textColor: Colors.black,
+    scientificOpButtonColor: Colors.green,
+    currentOpTextColor: Colors.black,
   );
 }

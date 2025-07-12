@@ -1,3 +1,4 @@
+import 'package:calulator/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import '../logic/calculator_logic.dart';
@@ -5,8 +6,13 @@ import '../models/calculator_state.dart';
 
 class CalculatorDisplay extends StatelessWidget {
   final CalculatorState state;
+  final CalculatorTheme theme;
 
-  const CalculatorDisplay({super.key, required this.state});
+  const CalculatorDisplay({
+    super.key,
+    required this.state,
+    required this.theme,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +39,7 @@ class CalculatorDisplay extends StatelessWidget {
           if (state.operation != null && state.previousValue != null)
             Text(
               "${CalculatorLogic.formatDisplay(state.previousValue!)} ${state.operation}",
-              style: const TextStyle(color: Colors.grey, fontSize: 20),
+              style: TextStyle(color: theme.currentOpTextColor, fontSize: 20),
             ),
           const SizedBox(height: 8),
           // Main display
@@ -43,7 +49,7 @@ class CalculatorDisplay extends StatelessWidget {
             child: Text(
               state.display,
               style: TextStyle(
-                color: Colors.white,
+                color: theme.textColor,
                 fontSize: _getFontSize(state.display.length),
                 fontWeight: FontWeight.w300,
               ),
