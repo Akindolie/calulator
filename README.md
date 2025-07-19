@@ -8,9 +8,9 @@ A fully interactive and responsive calculator app built using **Flutter** and **
 
 ## 🖼️ Screenshots
 
-| Dark Mode | Light Mode |
-|-----------|------------|
-| ![Dark Theme](./calculator_dark_theme.jpg) | ![Light Theme](./calculator_light_theme.jpg) |
+| Dark Mode                                                   | Light Mode                                                    |
+|-------------------------------------------------------------|---------------------------------------------------------------|
+| ![Dark Theme](assets/screenshots/calculator_dark_theme.jpg) | ![Light Theme](assets/screenshots/calculator_light_theme.jpg) |
 
 ---
 
