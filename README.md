@@ -1,6 +1,6 @@
 # 🔢 Flutter Interactive Calculator
 
-A fully interactive and responsive calculator app built using **Flutter** and **Dart**, as part of a Week 2 capstone project. This project brings together all the core Flutter concepts — variables, functions, state management, user input, event handling, and UI responsiveness — in a real-world application.
+A fully interactive and responsive calculator app built using **Flutter** and **Dart**, as part of a Week 2 project of a Flutter Bootcamp. This project brings together all the core Flutter concepts — variables, functions, state management, user input, event handling, and UI responsiveness — in a real-world application.
 
 🎥 **[Watch Demo on YouTube](https://youtube.com/shorts/GCGkDTTpIvw?feature=share)**
 
